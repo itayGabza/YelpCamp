@@ -26,7 +26,7 @@ app.use(flash());
   useUnifiedTopology: true,
   useFindAndModify: false
 })*/
-mongoose.connect('mongodb+srv://gabza:Suptal123$@cluster0.ohdea.mongodb.net/yelp_camp_v11?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://gabza:Suptal123$@cluster0.ohdea.mongodb.net/YelpCamp?retryWrites=true&w=majority', {
 useNewUrlParser: true,
 useCreateIndex: true
 }).then(() => {
