@@ -20,12 +20,20 @@ var commentRoutes	  = require("./routes/comments"),
 app.use(flash());
 
 //seedDB();
-mongoose.connect("mongodb://localhost/yelp_camp_v11", {
+/*mongoose.connect("mongodb://localhost/yelp_camp_v11", {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
   useFindAndModify: false
-})
+})*/
+mongoose.connect('mongodb+srv://gabza:Suptal123$@cluster0.ohdea.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+useNewUrlParser: true,
+useCreateIndex: true
+}).then(() => {
+	console.log('connetcted to db!')
+}).catch(err => {
+	console.log('ERROR:', err.message);
+});
 app.use(bodyParser.urlencoded({extended: true}));// parser 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"))
